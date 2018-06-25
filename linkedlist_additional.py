@@ -14,11 +14,13 @@ class Node(object):
 
 class LinkedList(object):
 
+
+####### I considered two linked list with heads h1 and h2. There many ways to do. I chose to have a Linked List class 
+####### But also possible to just do with Node class
+
     def __init__(self):
         self.h1 = None
         self.h2 = None
-        self.t1 = None
-        # self.t2 = None
 
     def find_converging_node(self):
         """This works only if two diverged LinkedList is of same length"""
@@ -37,7 +39,9 @@ class LinkedList(object):
 
         return "No converging Nodes"
 
-        """ This works for all condtions but not an optimized solution"""
+
+    def find_converging_node(self):        
+        """ This works even if not of same length but throws error on a condition where there is no next"""
 
         if self.h1 is None or self.h2 is None:
             return None
@@ -53,6 +57,9 @@ class LinkedList(object):
             current_node_l1 = current_node_l1.next
 
         return "No converging nodes"
+
+    def find_converging_node(self):
+        """ This works for all conditions but can be optimized"""
 
         if self.h1 is None or self.h2 is None:
             return None
